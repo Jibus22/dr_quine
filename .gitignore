@@ -1,0 +1,10 @@
+.ccls
+*.pdf
+*.o
+*.a
+*.so
+*.out
+Colleen/C/Colleen
+Grace/C/Grace
+Sully/C/Sully
+Sully/C/Sully_*
