@@ -58,6 +58,7 @@ $(OBJPATH)/%.o : $(SRCPATH)/%.c
 clean :
 	@echo "$(END)$(RED)# removing $(NAME) objects #$(END)$(GREY)"
 	rm -rf $(OBJ)
+	rm -f Grace_kid.c
 
 fclean : clean
 	@echo "$(END)$(RED)\n# removing $(NAME) #$(END)$(GREY)"
