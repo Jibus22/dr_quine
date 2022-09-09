@@ -17,41 +17,42 @@ main:
 ;yadiyiyadyo
 push rbp
 mov rbp, rsp
-mov r12, 5
-cmp r12, 0
+sub rsp, 32
+mov r8, 5
+cmp r8, 0
 je exit
 mov rdi, current
 call strlen
 cmp rax, 7
 jle getfilename
-dec r12
+dec r8
 getfilename:
-lea rdi, [r13]
+lea rdi, [rsp]
 mov rsi, filename
-mov rdx, r12
+mov rdx, r8
 call asprintf
-mov rdi, [r13]
+mov rdi, [rsp]
 mov rsi, FLAG
 mov rdx, MODE
 mov rax, SYS_OPEN
 syscall
-mov rbx, rax
-mov rdi, rax
-mov rsi, msg
-mov rdx, msg
-mov rcx, 10
-mov r8, 34
-mov r9, r12
-call dprintf
-mov rdi, rbx
-mov rax, 3
-syscall
-lea rdi, [r13]
-mov rsi, comp
-mov rdx, r12
-call asprintf
-mov rdi, [r13]
-call system
+;push rax
+;mov rdi, rax
+;mov rsi, msg
+;mov rdx, msg
+;mov rcx, 10
+;mov r8, 34
+;mov r9, r10
+;call dprintf
+;pop rdi
+;mov rax, 3
+;syscall
+;lea rdi, [r11]
+;mov rsi, comp
+;mov rdx, r10
+;call asprintf
+;mov rdi, [r11]
+;call system
 exit:
 mov rax, 0
 leave
